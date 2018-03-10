@@ -33,7 +33,6 @@ public class JavaIOUtils {
 			// read file using Scanner
 			StringBuffer sbScanner = readFileWithScanner("/Users/lpache/JeeEnvironment/workspace/OtherCodes/src/com/javatraining/i/entrada.txt");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
