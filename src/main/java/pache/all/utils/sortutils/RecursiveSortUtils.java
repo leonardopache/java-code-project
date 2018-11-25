@@ -67,5 +67,9 @@ public class RecursiveSortUtils {
 	public static <T> Collection<T> quickSort(T collection) {
 		return null;
 	}
+	
+	public static <T> Collection<T> heapSort(T collection) {
+		return null;
+	}
 
 }
