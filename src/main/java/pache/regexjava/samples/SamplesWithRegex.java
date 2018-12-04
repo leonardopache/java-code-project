@@ -17,13 +17,18 @@ public class SamplesWithRegex {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String ip = "193.165.144.255";
-		System.out.println(ip.matches(new MyRegex().ipPattern));
+//		String ip = "193.165.144.255";
+//		System.out.println(ip.matches(new MyRegex().ipPattern));
+//		
+//		String date = "20/12/2015";
+//		System.out.println(date.matches(new MyRegex().datePattern));
+//		
+//		StringUtil.removeDuplicateWords();
 		
-		String date = "20/12/2015";
-		System.out.println(date.matches(new MyRegex().datePattern));
+		String mail = "lp.ache@gmail.com";
+		System.out.println(mail.matches(new MyRegex().mailPattern));
 		
-		StringUtil.removeDuplicateWords();
+//		StringUtil.extractLoginFromMail();
 	}
 
 }
@@ -31,6 +36,7 @@ class MyRegex {
 
 	public final String datePattern;
 	public final String ipPattern;
+	public final String mailPattern;
 	
 	public MyRegex() {
 		String zeroTo255 = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";
@@ -39,6 +45,8 @@ class MyRegex {
 		String dates = "";
 		datePattern = dates;
 		
+		String mail = "^[a-z\\.]+@gmail\\.com$";
+		mailPattern = mail;
 	}
 }
 
@@ -60,6 +68,11 @@ class StringUtil{
         	System.out.println(input);
         }
         in.close();
+	}
+
+	public static void extractLoginFromMail() {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
