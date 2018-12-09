@@ -6,4 +6,4 @@ target/
 .ruleset
 .settings
 .DS_Store
-.classpath
+/.classpath
