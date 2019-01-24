@@ -2,8 +2,6 @@ bin/
 target/
 .eclipse-pmd
 .pmd
-.project
 .ruleset
-.settings
 .DS_Store
-/.classpath
+
