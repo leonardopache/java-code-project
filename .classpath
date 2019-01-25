@@ -3,6 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="lib" path="/Users/lpache/JeeEnvironment/Tools/jar/joda-time-2.9.9.jar"/>
-	<classpathentry kind="output" path="bin"/> 
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/user-lib"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
