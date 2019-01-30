@@ -1,20 +1,30 @@
 /**
  * 
  */
-package pache.all.utils.sortutils;
+package pache.all.sort.algorithms;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 /**
+ * Class with implementation of some sort algorithms like
+ * {@link #mergeSort(Collection)}, {@link #heapSort(Object)},
+ * {@link #quickSort(Object)}
+ * 
  * @author lpache
- *
  */
-public class RecursiveSortUtils {
+public class RecursiveSortMethods {
 
-	private RecursiveSortUtils() {
+	private RecursiveSortMethods() {
 	}
 
+	/**
+	 * This is a recursive implementation of merge sort that is a stable sort and
+	 * use a divide an conquer algorithm.
+	 * 
+	 * @param collection
+	 * @return sorted collection
+	 */
 	public static <T> Collection<? extends Comparable<T>> mergeSort(Collection<? extends Comparable<T>> list) {
 		if (list == null)
 			return null;
@@ -67,7 +77,7 @@ public class RecursiveSortUtils {
 	public static <T> Collection<T> quickSort(T collection) {
 		return null;
 	}
-	
+
 	public static <T> Collection<T> heapSort(T collection) {
 		return null;
 	}
