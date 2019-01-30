@@ -20,7 +20,11 @@ public class RecursiveSortMethods {
 
 	/**
 	 * This is a recursive implementation of merge sort that is a stable sort and
-	 * use a divide an conquer algorithm.
+	 * use a divide an conquer algorithm. The algorithm is dived in two part: <br>
+	 * 1 split the array until has many array of one value (Array with size one is
+	 * sorted). <br>
+	 * 2 Merge every left/right pair into a sorted array until has only one sorted
+	 * array.
 	 * 
 	 * @param collection
 	 * @return sorted collection
