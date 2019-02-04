@@ -5,6 +5,7 @@ package pache.all.sort.algorithms;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Class with implementation of some sort algorithms like
@@ -78,8 +79,34 @@ public class RecursiveSortMethods {
 		return sorted;
 	}
 
-	public static <T> Collection<T> quickSort(T collection) {
-		return null;
+	public static <T> void quickSort(List<Comparable<T>> list, int start, int end) {
+		// only one element, already ordered
+		if (end - start < 2)
+			return;
+
+		int pivotIndex = partition(list, start, end);
+		quickSort(list, start, pivotIndex);
+		quickSort(list, pivotIndex + 1, end);
+	}
+
+	private static <T> int partition(List<Comparable<T>> list, int start, int end) {
+		T pivot = (T) list.get(start);
+		int i = start;
+		int j = end;
+		while (i < j) {
+			while (i < j && list.get(--j).compareTo(pivot) >= 0)
+				;
+			if (i < j) {
+				list.set(i, list.get(j));
+			}
+			while (i < j && list.get(++i).compareTo(pivot) <= 0)
+				;
+			if (i < j) {
+				list.set(j, list.get(i));
+			}
+		}
+		list.set(j, (Comparable<T>) pivot);
+		return j;
 	}
 
 	public static <T> Collection<T> heapSort(T collection) {
