@@ -79,6 +79,15 @@ public class RecursiveSortMethods {
 		return sorted;
 	}
 
+	/**
+	 * This is a recursive implementation of quick sort that is a unstable sort and
+	 * use a divide an conquer algorithm. 
+	 * 
+	 * @param list unsorted
+	 * @param start position index
+	 * @param end position index
+	 * @return sorted collection
+	 */
 	public static <T> void quickSort(List<Comparable<T>> list, int start, int end) {
 		// only one element, already ordered
 		if (end - start < 2)
