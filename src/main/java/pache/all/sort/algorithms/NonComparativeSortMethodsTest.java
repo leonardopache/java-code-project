@@ -12,5 +12,21 @@ public class NonComparativeSortMethodsTest {
 			System.out.println(iten);
 		}
 	}
+	@Test
+	public void radixSort_IntegerTest() {
+		Integer[] radixSort = new Integer[] { 4725, 4586, 1330, 8792, 5729 };
+		NonComparativeSortMethods.radixSort(radixSort, 10, 4);
+		for (Comparable<Integer> iten : radixSort) {
+			System.out.println(iten);
+		}
+	}
 
+	@Test
+	public void radixSort_StringTest() {
+		String[] radixSort = new String[] { "bcdef", "dbaqc", "abcde", "omadd", "bbbbb" };
+		NonComparativeSortMethods.radixSort(radixSort, 26, 5);
+		for (Comparable<String> iten : radixSort) {
+			System.out.println(iten);
+		}
+	}
 }
