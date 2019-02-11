@@ -1,3 +1,3 @@
 # Java Code
 
-[JavaDoc](/doc/index.html "JavaDoc")
+JavaDoc em /doc/index.html
