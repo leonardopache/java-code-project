@@ -25,9 +25,9 @@ public class TestZoo {
 
 	@Test
 	public void testItselfFriendship() {
-		int friendsBefore = zoo.getAnimalList().get(1).friends.size();
+		int friendsBefore = zoo.getAnimalList().get(1).getFriends().size();
 		zoo.getAnimalList().get(1).createFriendship(zoo.getAnimalList().get(1));
-		int friendsAfter = zoo.getAnimalList().get(1).friends.size();
+		int friendsAfter = zoo.getAnimalList().get(1).getFriends().size();
 		assertThat(friendsBefore == friendsAfter, is(true));
 	}
 
@@ -36,16 +36,16 @@ public class TestZoo {
 		Animal me = zoo.getAnimalList().get(4);
 		Animal he = zoo.getAnimalList().get(2);
 		me.createFriendship(he);
-		assertThat(he.friends.contains(me), is(true));
+		assertThat(he.getFriends().contains(me), is(true));
 	}
 	
 	@Test
 	public void testCreateFriendship() {
 		Animal me = zoo.getAnimalList().get(4);
 		Animal he = zoo.getAnimalList().get(2);
-		int friendsBefore = me.friends.size();
+		int friendsBefore = me.getFriends().size();
 		me.createFriendship(he);
-		assertThat(me.friends.size() > friendsBefore , is(true));
+		assertThat(me.getFriends().size() > friendsBefore , is(true));
 	}
 	
 	@Test
@@ -54,8 +54,8 @@ public class TestZoo {
 		Animal he = zoo.getAnimalList().get(2);
 		me.createFriendship(he);
 		me.removeFriendship(he);
-		assertThat(!me.friends.contains(he) , is(true));
-		assertThat(!he.friends.contains(me) , is(true));
+		assertThat(!me.getFriends().contains(he) , is(true));
+		assertThat(!he.getFriends().contains(me) , is(true));
 	}
 
 	@Test
@@ -64,10 +64,10 @@ public class TestZoo {
 		int numberOfAnimals = zoo.getAnimalList().size();
 		int position = randon.nextInt(numberOfAnimals);
 		
-		int friendsBefore = zoo.getAnimalList().get(position).friends.size();
+		int friendsBefore = zoo.getAnimalList().get(position).getFriends().size();
 		Zoo zoo = new Zoo();
 		zoo.liveOneDay();
-		int friendsAfter = zoo.getAnimalList().get(position).friends.size();
+		int friendsAfter = zoo.getAnimalList().get(position).getFriends().size();
 		
 //		assertThat(friendsBefore != friendsAfter, is(true));
 	}

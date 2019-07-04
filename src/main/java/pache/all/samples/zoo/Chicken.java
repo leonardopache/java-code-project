@@ -42,7 +42,7 @@ public class Chicken extends Animal {
 	@Override
 	public String toString() {
 		return "Chicken [lengthWings=" + getLengthWings() + ", broiler=" + isBroiler() + ", name=" + getName() + ", favoriteFood="
-				+ getFavoriteFood() + ", friends=["+ friends.stream().map(Animal::getName).collect(Collectors.joining(", ")) + "]]";
+				+ getFavoriteFood() + ", friends=["+ getFriends().stream().map(Animal::getName).collect(Collectors.joining(", ")) + "]]";
 	}
 	
 	

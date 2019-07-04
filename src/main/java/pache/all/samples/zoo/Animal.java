@@ -15,7 +15,7 @@ public abstract class Animal {
 	protected String name;
 	protected String favoriteFood;
 	
-	protected List<Animal> friends = new ArrayList<>();
+	private List<Animal> friends = new ArrayList<>();
 
 	protected abstract String getFavoriteFood();
 
@@ -34,4 +34,9 @@ public abstract class Animal {
 			friends.remove(friend);
 		}
 	}
+	
+	protected List<Animal> getFriends(){
+		return friends;
+	}
+	
 }

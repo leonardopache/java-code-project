@@ -24,7 +24,7 @@ public class Dog extends Animal {
 	@Override
 	public String toString() {
 		return "Dog [food=" + getFavoriteFood() + ", name=" + getName() + ", dogType=" + dogType + ", friends=["
-				+ friends.stream().map(Animal::getName).collect(Collectors.joining(", ")) + "]]";
+				+ getFriends().stream().map(Animal::getName).collect(Collectors.joining(", ")) + "]]";
 	}
 
 }
