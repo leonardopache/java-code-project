@@ -6,10 +6,10 @@ package pache.all.samples.zoo;
 import java.util.stream.Collectors;
 
 /**
+ * 
  * @author lmarquespache
- *
  */
-public class Chicken extends Animal {
+public class Chicken extends Animal implements IBirds{
 	
 	private double lengthWings;
 	private boolean broiler;

@@ -60,32 +60,24 @@ public class TestZoo {
 
 	@Test
 	public void testLiveOneDay() {
-		Random randon = new Random();
-		int numberOfAnimals = zoo.getAnimalList().size();
-		int position = randon.nextInt(numberOfAnimals);
-		
-		int friendsBefore = zoo.getAnimalList().get(position).getFriends().size();
-		Zoo zoo = new Zoo();
 		zoo.liveOneDay();
-		int friendsAfter = zoo.getAnimalList().get(position).getFriends().size();
 		
-//		assertThat(friendsBefore != friendsAfter, is(true));
 	}
 	
 	private void createZoo() {
-		String[] names = new String[] { "P. One", "P. Two", "Killian" };
 		String[] foods = new String[] { "Meet", "Corn", "Fresh meat" };
 		Random randon = new Random();
 
-		zoo.insertAnimal(new Dog(names[randon.nextInt(names.length)], foods[randon.nextInt(foods.length)], "Hunting dog"));
-		zoo.insertAnimal(new Dog(names[randon.nextInt(names.length)], foods[randon.nextInt(foods.length)], "Guard dog"));
-		zoo.insertAnimal(new Dog(names[randon.nextInt(names.length)], foods[randon.nextInt(foods.length)], "Hunting dog"));
-		zoo.insertAnimal(new Dog(names[randon.nextInt(names.length)], foods[randon.nextInt(foods.length)], "Inndor dog"));
-		zoo.insertAnimal(new Chicken(names[randon.nextInt(names.length)], foods[randon.nextInt(foods.length)], 0.75d, false));
+		zoo.insertAnimal(new Dog("Killian", foods[randon.nextInt(foods.length)], "Hunting dog"));
+		zoo.insertAnimal(new Dog("Rocky", foods[randon.nextInt(foods.length)], "Guard dog"));
+		zoo.insertAnimal(new Dog("Peter", foods[randon.nextInt(foods.length)], "Hunting dog"));
+		zoo.insertAnimal(new Chicken("KFC one", foods[randon.nextInt(foods.length)], 0.75d, false));
+		zoo.insertAnimal(new Chicken("Rock", foods[randon.nextInt(foods.length)], 0.75d, false));
 //		zoo.insertAnimal();
 		
-//		zooAnimalsList.get(0).createFriendship(zooAnimalsList.get(1));
-//		zooAnimalsList.get(zooAnimalsList.size()-1).createFriendship(zooAnimalsList.get(0));
+		zoo.getAnimalList().get(0).createFriendship(zoo.getAnimalList().get(1));
+		zoo.getAnimalList().get(2).createFriendship(zoo.getAnimalList().get(3));
+		zoo.getAnimalList().get(zoo.getAnimalList().size()-1).createFriendship(zoo.getAnimalList().get(0));
 
 	}
 

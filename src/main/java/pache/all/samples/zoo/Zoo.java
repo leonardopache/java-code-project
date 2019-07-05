@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * Clas responsible for operate the Zoo actions.
+ * 
  * @author lmarquespache
  *
  */
@@ -17,20 +19,18 @@ public class Zoo {
 	
 	public Zoo() {
 		zooAnimalsList = new ArrayList<>();
-//
-//		String[] names = new String[] { "P. One", "P. Two", "Killian" };
-//		String[] foods = new String[] { "Meet", "Corn", "Fresh meat" };
-//		Random random = new Random();
-//		zooAnimalsList
-//				.add(new Dog(names[random.nextInt(names.length)], foods[random.nextInt(foods.length)], "Hunting dog"));
-//		zooAnimalsList
-//				.add(new Dog(names[random.nextInt(names.length)], foods[random.nextInt(foods.length)], "Guard dog"));
-//		zooAnimalsList
-//				.add(new Dog(names[random.nextInt(names.length)], foods[random.nextInt(foods.length)], "Hunting dog"));
-//		zooAnimalsList
-//				.add(new Dog(names[random.nextInt(names.length)], foods[random.nextInt(foods.length)], "Inndor dog"));
-//		zooAnimalsList.add(
-//				new Chicken(names[random.nextInt(names.length)], foods[random.nextInt(foods.length)], 0.75d, false));
+	}
+	
+	public void createDummyZoo() {
+		zooAnimalsList = new ArrayList<>();
+		String[] foods = new String[] { "Meet", "Corn", "Fresh meat" };
+		Random randon = new Random();
+
+		this.insertAnimal(new Dog("Killian", foods[randon.nextInt(foods.length)], "Hunting dog"));
+		this.insertAnimal(new Dog("Rocky", foods[randon.nextInt(foods.length)], "Guard dog"));
+		this.insertAnimal(new Dog("Peter", foods[randon.nextInt(foods.length)], "Hunting dog"));
+		this.insertAnimal(new Chicken("KFC one", foods[randon.nextInt(foods.length)], 0.75d, false));
+		this.insertAnimal(new Chicken("Rock", foods[randon.nextInt(foods.length)], 0.75d, false));
 	}
 
 	public void showZoo() {
@@ -44,9 +44,13 @@ public class Zoo {
 			boolean action = random.nextBoolean();
 
 			if(action) {
-				animal.createFriendship(zooAnimalsList.get(position));
+				if(!animal.getFriends().contains(zooAnimalsList.get(position))) {
+					animal.createFriendship(zooAnimalsList.get(position));
+				}
 			} else {
-				animal.removeFriendship(zooAnimalsList.get(position));
+				if(animal.getFriends().contains(zooAnimalsList.get(position))) {
+					animal.removeFriendship(zooAnimalsList.get(position));
+				}
 			}
 		}
 	}
